@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url(../images/JasRomeo2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+a {
+    cursor:pointer;
+}
+
+.button {
+    cursor: pointer;
+}
+
+.grid { /*if device is under 736px below mobile grid version is run*/
+    display:grid;
+    grid-template-columns: 2fr auto;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "index-page-title index-page-title"
+    "index-masthead index-masthead"
+    "index-hero index-hero"
+    "index-side-bar index-sidebar"
+    "index-main-content index-main-content"
+    "index-footer index-footer"
+    "index-footer index-footer";
+    grid-gap: 0px;
+}
+
+.page-title {
+    grid-area: index-page-title;
+}
+.masthead {
+    grid-area: index-masthead;
+}
+.hero {
+    grid-area: index-hero;
+}
+.hero {
+    justify-self: center;
+    align-self: end;
+}
+.side-bar {
+    grid-area: index-side-bar;
+}
+.side-bar {
+    justify-self:center;
+    align-self: center;
+}
+.main-content {
+    grid-area: index-main-content;
+}
+.main-content {
+    justify-self: center;
+    align-self: center;
+}
+.footer {
+    grid-area: index-footer;
+}
+.masthead {
+    align-items: center;
+    
+}
+/*.main-nav {
+    position: absolute;
+    list-style: none;
+    margin-top: 20px;
+    margin-right: 5px;
+}*/
+.main-nav li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.main-nav li a {
+    color: gold;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+    font-size: 20px;
+    padding: 5px;
+    margin: 2px;
+}
+.main-nav li.active a {
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: 13px;
+}
+.main-nav li a:hover {
+    border: 1px solid white;
+}
+.logo img {
+    width: 100px;
+    height: auto;
+    float: left;
+}
+.row {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+}
+.heading {
+    background-color: transparent;
+    font-family: "Freestyle Script";
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 0px 0px;
+}
+.btn-one {
+    font-family: "Roboto", "sans-serif";
+    font-size: 13px;
+    text-transform: uppercase;
+    width: 240px;
+    height: 60px;
+    border-radius: 80px;
+    line-height: 60px;
+    text-align: center;
+    border: 2px solid white;
+    display: block;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background: darkorchid;
+    transition: .3s;
+}
+.btn-one:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: darkorchid;
+    top: -100%;
+    left: 0;
+    z-index: +1;
+    transition: .7s;
+}
+.btn-one:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../images/youtubelogo.jpg");
+    top: -100%;
+    left: 0;
+    z-index: +1;
+    transition: .7s;
+}
+.btn-one:hover {
+    background: darkmagenta;
+}
+.btn-one:hover:before  {
+    top: 0;
+}
+.btn-one:hover:after {
+    top: 0;
+}
+.btn-two {
+    font-family: "Roboto", "sans-serif";
+    font-size: 13px;
+    text-transform: uppercase;
+    width: 240px;
+    height: 60px;
+    border-radius: 80px;
+    line-height: 60px;
+    text-align: center;
+    border: 2px solid white;
+    display: block;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    background: darkorchid;
+    transition: .3s;
+} 
+.btn-two:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: darkorchid;
+    top: -100%;
+    left: 0;
+    z-index: +1;
+    transition: .7s;
+}
+.btn-two:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: url("../images/instagram1 logo.jpg");
+    top: -100%;
+    left: 0;
+    z-index: +1;
+    transition: .7s;
+}
+.btn-two:hover {
+    background: darkmagenta;
+}
+.btn-two:hover:before  {
+    top: 0;
+}
+.btn-two:hover:after {
+    top: 0;
+}
+.purple {
+    background-color: transparent;
+}
+
+@media screen and (min-width: 736px) /*if device is over 736px below desktop version is run*/
+{
+    .grid {
+        display:grid;
+        grid-template-columns: 1fr 300px 600px 1fr;
+        grid-template-rows: 50px 100px 160px 130px 130px 100px 1fr;
+        grid-template-areas: 
+        ". index-page-title index-masthead ."
+        ". index-hero index-hero ."
+        ". index-hero index-hero ."
+        ". index-side-bar index-main-content ."
+        ". index-side-bar index-main-content ."
+        ". index-footer index-footer ."
+        ". index-footer index-footer .";
+        grid-gap: 0px;
+    }
+    .main-nav {
+        position: absolute;
+        list-style: none;
+        margin-top: 20px;
+        margin-right: 50px;
+    }
+    .main-nav li {
+        display: inline-block;
+        }
+    .main-nav li.active a {
+        border: 1px solid white;
+        border-radius: 3px;
+        font-size: 15px;
+    }
+    .main-nav li a {
+        color: gold;
+        text-decoration: none;
+        padding: 2px 2px;
+        font-family: "Roboto", sans-serif;
+        font-size: 15px;
+        margin-left: 10px;
+        }
+}
