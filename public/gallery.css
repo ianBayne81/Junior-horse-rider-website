@@ -7,19 +7,8 @@ body {
     background-image: url("./images/flowerbg.jpg");
     background-attachment: fixed;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     background-size: cover; 
-}
-
-.grid { /*if device is under 736px below mobile grid version is run*/
-    display:grid;
-    grid-template-columns: 2fr;
-    grid-template-rows: 3fr auto;
-    grid-template-areas: 
-    "index-home-top index-heading"
-    "index-main-content index-main-content"
-    "index-button index-button";
-    grid-gap: 0px;
 }
 .home-top {
     grid-area: index-home-top;
@@ -45,7 +34,7 @@ body {
     display: flex;
     height: auto;
     width: auto;
-    margin: 10px;
+    margin-right: 20px;
     text-align: left;
     padding: 5px;
 }
@@ -79,8 +68,7 @@ body {
 .h1 {
     font-family: "Freestyle Script";
     color: white;
-    font-size: 15px;
-    background: rgba(0,0,0,0.4);
+    font-size: 12px;
     align-items: center;
     text-align: left;
 }
@@ -147,8 +135,24 @@ body {
     top: 0;
 }
 
-@media screen and (min-width: 736px) /*if device is over 736px below desktop version is run*/
-{
+/* These properties are only for mobile device display under 750px screen width*/
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .grid { 
+        display:grid;
+        grid-template-columns: 2fr;
+        grid-template-rows: 3fr auto;
+        grid-template-areas: 
+        "index-home-top index-heading"
+        "index-main-content index-main-content"
+        "index-button index-button";
+        grid-gap: 0px;
+        margin-top: 10px;
+    }
+
+}
+
+/* These properties are only for PC device display over 750px screen width*/
+@media screen and (min-width: 750px) {
     .grid {
         display:grid;
         grid-template-columns: 1fr 450px 450px 1fr;
@@ -178,7 +182,6 @@ body {
         font-family: "Freestyle Script";
         color: white;
         font-size: 20px;
-        background: rgba(0,0,0,0.4);
         justify-content: start;
         align-items: center;
     }
